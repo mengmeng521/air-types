@@ -1,9 +1,13 @@
-module AirTypes.Helpers where
+module AirType.Helpers where
 
-import AirTypes.Types
+import AirType.Types
+import Data.Char
 
 fromString :: String -> Maybe [Input]
 fromString = mapM fromChar
+
+fromInputs :: [Input] -> [[Char]]
+fromInputs = fmap fromInput
 
 fromInput :: Input -> [Char]
 fromInput L1 = [' ']
@@ -30,7 +34,7 @@ fromChar c = case toLower c of
     'i' -> Just R3
     'j' -> Just R2
     'k' -> Just R3
-    'l' -> Just R3
+    'l' -> Just R4
     'm' -> Just R2
     'n' -> Just R2
     'o' -> Just R4
